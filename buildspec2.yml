@@ -1,3 +1,5 @@
+version: 0.2
+
 phases:
   install:
     runtime-versions:
@@ -20,4 +22,5 @@ phases:
       - echo "Build completed successfully!"
 artifacts:
   files:
-    - app/*.py
+     - '**/*'
+  base-directory: ../codebuild-ecr
