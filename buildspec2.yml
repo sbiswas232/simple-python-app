@@ -14,8 +14,8 @@ phases:
       - echo "Building Docker image..."
       - docker build -t "simple-python-flaskapp:jul17" .
       - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 871042891378.dkr.ecr.ap-southeast-1.amazonaws.com
-      - docker tag simple-python-flaskapp:jul17 871042891378.dkr.ecr.ap-southeast-1.amazonaws.com/myaws-dockerhub:simple-python-flaskapp/jul17
-      - docker push 871042891378.dkr.ecr.ap-southeast-1.amazonaws.com/myaws-dockerhub:simple-python-flaskapp/jul17
+      - docker tag simple-python-flaskapp:jul17 871042891378.dkr.ecr.ap-southeast-1.amazonaws.com/myaws-dockerhub:simple-python-flaskapp
+      - docker push 871042891378.dkr.ecr.ap-southeast-1.amazonaws.com/myaws-dockerhub:simple-python-flaskapp
       - docker logout
   post_build:
     commands:
@@ -23,4 +23,3 @@ phases:
 artifacts:
   files:
      - '**/*'
-  base-directory: ../codebuild-ecr
