@@ -15,7 +15,7 @@ phases:
       - pip install -r requirements.txt
   build:
     commands:
-      - echo "Running tests..."
+      - echo "Push Image to DockerHub..."
       - echo "Building Docker image..."
       - docker build -t "$DOCKER_REGISTRY_USERNAME/simple-python-flask-app:jun29-06" .
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin docker.io
