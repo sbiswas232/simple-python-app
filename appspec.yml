@@ -1,9 +1,12 @@
-version: 0.2
+version: 0.0
 os: linux
 
 hooks:
-  
-  afterinstall:
-    - location: scripts/start_container.sh
+  ApplicationStop:
+    - location: stop_container.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: start_container.sh
       timeout: 300
       runas: root
